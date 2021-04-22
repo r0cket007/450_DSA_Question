@@ -37,26 +37,28 @@
 #define r0cket007 in out 
 using namespace std ;
 //---------------------------------------------------------------------------------
-void threeWayPartition(vector<int>& array,int a, int b)
+int minSwap(int *arr, int n, int k) 
 {
-    int left = 0 , right = array.size( ) - 1 ;
-    int counter = 0 ;
-    while( counter <= right )
+    int left = 0 , right = 0 ;
+    int counter = -1 ;
+    int i = 0 ;
+    while( i < n )
     {
-        if( array[ counter ] < a )
+        int temp_left = i ;
+        while( i < n && arr[ i ] <= k )
         {
-            swap( array[ counter ] , array[ left ] ) ;
-            left ++ ;
-            counter ++ ;
+            i ++ ;
         }
-        else if( array[ counter ] > b )
+        int temp_right = i ;
+        int ct = temp_right - temp_left ;
+        if( ct > counter )
         {
-            swap( array[ counter ] , array[ right ] ) ;
-            right -- ;
+            counter = ct ;
+            left = temp_left ;
+            right = temp_right - 1 ;
         }
-        else 
-            counter ++ ;
     }
+    cout << left << " " << right ;
 }
 //------------------------------------------------------------------------------------
 signed main( )
