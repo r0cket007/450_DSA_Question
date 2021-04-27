@@ -12,6 +12,7 @@
 #define r0cket007 in out 
 using namespace std ;
 const int MAX = 500; 
+//------------------------------------------------------------------------------
 int histogram_area( int arr[] , int n )
 {
     int max_area = 0;
@@ -43,6 +44,7 @@ int histogram_area( int arr[] , int n )
     }
     return max_area ;
 }
+//-----------------------------------------------------------------------------------
 int maxArea(int M[MAX][MAX], int n, int m) 
 {
     int arr[m] = {0} ;
@@ -58,6 +60,7 @@ int maxArea(int M[MAX][MAX], int n, int m)
     }
     return max_area;
 }
+//-------------------------------------------------------------------------------------
 signed main( )
 {
     #ifndef ONLINE_JUDGE
