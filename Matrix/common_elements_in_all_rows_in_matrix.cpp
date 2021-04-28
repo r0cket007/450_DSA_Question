@@ -1,9 +1,8 @@
 /*
-    Rotate Image
-    LINK : https://leetcode.com/problems/rotate-image/
+    Common elements in all rows of a given matrix
+    LINK : https://www.geeksforgeeks.org/common-elements-in-all-rows-of-a-given-matrix/
 
-    Expected Time Complexity : O(n*n)
-    Expected Auixiliary Space : O(1)
+    Expected Time Complexity : O(n*m)
 */
 #include<bits/stdc++.h>
 #define int long long
@@ -16,7 +15,7 @@ const int MAX = 500;
 //-----------------------------------------------------------------------------------
 void printCommonElements(int matrix[MAX][MAX], int n, int m) 
 {
-    map<int,int> mp ;
+    unordered_map<int,int> mp ;
     for(int i = 0; i < n; i ++)
     {
         for(int j = 0; j < m ; j ++)
