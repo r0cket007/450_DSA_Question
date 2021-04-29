@@ -1,6 +1,8 @@
 /*
-    Count and Say 
-    LINK : https://leetcode.com/problems/count-and-say/
+    Longest Palindrome
+    LINK : https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1
+    Expected Time Complexity: O(n*n)
+    Expected Space Complexity: O(1)
 */
 #include<bits/stdc++.h>
 #define int long long
