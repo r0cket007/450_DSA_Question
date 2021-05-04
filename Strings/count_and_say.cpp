@@ -11,7 +11,6 @@ using namespace std ;
 const int MAX = 500; 
 
 //-----------------------------------------------------------------------------------
-
 int counter = 1 ;
 string solve(string txt, int n)
 {
