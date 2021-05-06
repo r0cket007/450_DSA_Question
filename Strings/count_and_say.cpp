@@ -9,7 +9,6 @@
 #define r0cket007 in out 
 using namespace std ;
 const int MAX = 500; 
-
 //-----------------------------------------------------------------------------------
 int counter = 1 ;
 string solve(string txt, int n)
@@ -38,7 +37,6 @@ string countAndSay(int n)
 {
     return solve("1",n);
 }
-
 //-------------------------------------------------------------------------------------
 signed main( )
 {
