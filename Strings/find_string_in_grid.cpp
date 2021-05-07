@@ -1,3 +1,14 @@
+/*
+    Find the string in grid
+    Link: https://practice.geeksforgeeks.org/problems/find-the-string-in-grid0111/1#
+    
+    Expected Time Complexity: O(n*m*k) where k is constant
+    Exected Space Complexity: O(1)
+    
+    Constraints:
+    1 <= n <= m <= 100
+    1 <= |word| <= 10 
+*/
 #include<bits/stdc++.h>
 #define int long long
 using namespace std ;
