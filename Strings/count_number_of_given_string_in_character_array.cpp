@@ -8,32 +8,39 @@
 using namespace std ;
 
 //-----------------------------------------------------------------------------------------
-bool check(int row, int col, int n, int m, string arr[], string txt, int pos)
+bool check(int row, int col, int n, int m)
 {
-    return ( n > row && m > col && row >= 0 && col >= 0 && arr[row][col] == txt[pos] );
+    return ( n > row && m > col && row >= 0 && col >= 0);
 }
 int bruteforce(string txt, int pos, string arr[], int row, int col, int n, int m)
 {
     int ans = 0;
-    if( pos == txt.length())
+    if( arr[row][col] != txt[pos] )
+    {
+        return 0;
+    }
+    if(pos == txt.length() - 1 && arr[row][col] == txt[pos])
     {
         return 1;
     }
     char ch = arr[row][col];
     arr[row][col] = 0 ;
-    if( check( row + 1, col, n, m, arr, txt, pos) )
+    if( check( row + 1, col, n, m) )
     {
         ans += bruteforce(txt, pos + 1, arr, row + 1, col, n, m);
+            
     }
-    if( check( row - 1, col, n, m, arr, txt, pos ) )
+    if( check( row - 1, col, n, m) )
     {
         ans += bruteforce( txt, pos + 1, arr, row - 1, col, n, m);
+ 
     }
-    if( check( row , col + 1, n, m, arr, txt, pos) )
+    if( check( row , col + 1, n, m) )
     {
         ans += bruteforce( txt, pos + 1, arr, row, col + 1, n, m);
+        
     }
-    if( check( row, col - 1, n, m, arr, txt, pos) )
+    if( check( row, col - 1, n, m) )
     {
         ans += bruteforce( txt, pos + 1, arr, row , col - 1, n, m);
     }
