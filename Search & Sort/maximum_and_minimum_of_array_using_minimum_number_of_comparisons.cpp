@@ -56,3 +56,18 @@ signed main( )
     }
     return 0 ;
 }
+/*
+    Total number of comparisons: let the number of comparisons be T(n). T(n) can be written as follows: 
+    Algorithmic Paradigm: Divide and Conquer 
+ 
+    T(n) = T(floor(n/2)) + T(ceil(n/2)) + 2  
+    T(2) = 1
+    T(1) = 0
+    If n is a power of 2, then we can write T(n) as: 
+
+    T(n) = 2T(n/2) + 2
+    After solving the above recursion, we get 
+
+    T(n)  = 3n/2 -2
+
+*/
