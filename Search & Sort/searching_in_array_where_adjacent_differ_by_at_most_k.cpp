@@ -1,4 +1,6 @@
 /*
+    Searching in an array where adjacent differ by at most k
+    Link: https://www.geeksforgeeks.org/searching-array-adjacent-differ-k/
 */
 #include<bits/stdc++.h>
 #define int long long
