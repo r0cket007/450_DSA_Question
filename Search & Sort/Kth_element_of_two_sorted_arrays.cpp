@@ -11,11 +11,11 @@ class Solution
 public:
     int getElement(int *arr1, int *arr2, int *end1, int *end2, int k)
     {
-        if(*arr1 == *end1)
+        if(arr1 == end1)
         {
             return arr2[k];
         }
-        if(*arr2 == *end2)
+        if(arr2 == end2)
         {
             return arr1[k];
         }
