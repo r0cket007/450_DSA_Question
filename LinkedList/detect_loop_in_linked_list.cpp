@@ -40,28 +40,36 @@ public:
         }
         cout << endl;
     }
-    //----------------------------------------------------------------------------
-    node *reverse(node *head, int k)
+    void loopHere(int position)
     {
-        if (head == NULL)
-            return NULL;
-        int counter = k;
-        node *current = head, *prev = NULL;
-        while (counter && current != NULL)
-        {
-            node *temp = current->next;
-            current->next = prev;
-            prev = current;
-            current = temp;
-            counter--;
-        }
-        head->next = reverse(current, k);
-        return prev;
+        if (position == 0)
+            return;
+
+        node *walk = head, *tail = head;
+        while(tail->next != NULL)
+            tail = tail->next;
+        for (int i = 1; i < position; i++)
+            walk = walk->next;
+        tail->next = walk;
     }
-    //----------------------------------------------------------------------------
-    void reverse_in_group(int k)
+    //---------------------------------------------------------------------------------
+    bool detectLoop(node *head)
     {
-        head = reverse(head, k);
+        node *fast = head;
+        node *slow = head;
+        while (fast->next != NULL && fast->next->next != NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+            if (slow == fast)
+                return true;
+        }
+        return false;
+    }
+    //----------------------------------------------------------------------------------
+    bool detect()
+    {
+        return detectLoop(head);
     }
 };
 signed main()
@@ -74,14 +82,8 @@ signed main()
         obj.push(8);
         obj.push(7);
         obj.push(6);
-        obj.push(5);
-        obj.push(4);
-        obj.push(2);
-        obj.push(2);
-        obj.push(1);
-        obj.print();
-        obj.reverse_in_group(4);
-        obj.print();
+        obj.loopHere(0);
+        cout << obj.detect();
         cout << endl;
     }
     return 0;

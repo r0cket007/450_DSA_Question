@@ -5,7 +5,6 @@
 #include<bits/stdc++.h>
 #define int long long
 using namespace std ;
-//--------------------------------------------------------------------
 struct node
 {
     int val;
@@ -40,6 +39,7 @@ class LinkedList
         }
         cout << endl;
     }
+    //-------------------------------------------------------------------------------
     void reverse_iterative()
     {
         node *current, *prev, *current_next;
@@ -65,12 +65,12 @@ class LinkedList
         current->next = NULL;
         return rest;
     }
+    //---------------------------------------------------------------------------------
     void reverse_recursive()
     {
         head = reverse_recursive(head);
     }
 };
-//--------------------------------------------------------------------
 signed main()
 {
     int testcases = 1 ;
