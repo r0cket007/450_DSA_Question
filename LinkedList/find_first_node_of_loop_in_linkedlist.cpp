@@ -1,15 +1,15 @@
 /*
-    Detect Loop in linked list 
-    Link: https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1
+    Find first node of loop in a linked list
+    Link: https://www.geeksforgeeks.org/find-first-node-of-loop-in-a-linked-list/
 */
 #include <bits/stdc++.h>
 #define int long long
 using namespace std;
-struct node
+struct Node
 {
     int val;
-    node *next;
-    node(int val)
+    Node *next;
+    Node(int val)
     {
         this->val = val;
         next = NULL;
@@ -17,7 +17,7 @@ struct node
 };
 class LinkedList
 {
-    node *head;
+    Node *head;
 
 public:
     LinkedList()
@@ -26,13 +26,13 @@ public:
     }
     void push(int val)
     {
-        node *temp = new node(val);
+        Node *temp = new Node(val);
         temp->next = head;
         head = temp;
     }
     void print()
     {
-        node *current = head;
+        Node *current = head;
         while (current != NULL)
         {
             cout << current->val << " ";
@@ -45,32 +45,37 @@ public:
         if (position == 0)
             return;
 
-        node *walk = head, *tail = head;
-        while(tail->next != NULL)
+        Node *walk = head, *tail = head;
+        while (tail->next != NULL)
             tail = tail->next;
         for (int i = 1; i < position; i++)
             walk = walk->next;
         tail->next = walk;
     }
     //---------------------------------------------------------------------------------
-    bool detectLoop(node *head)
+    int startPoint()
     {
-        node *fast = head;
-        node *slow = head;
+        Node *fast = head;
+        Node *slow = head;
         while (fast->next != NULL && fast->next->next != NULL)
         {
             slow = slow->next;
             fast = fast->next->next;
             if (slow == fast)
-                return true;
+                break;
         }
-        return false;
+        if (fast->next == NULL || fast->next->next == NULL)
+            return;
+        slow = head;
+        Node *prev = fast;
+        while (slow != fast)
+        {
+            slow = slow->next;
+            fast = fast->next;
+        }
+        return fast->val;
     }
     //----------------------------------------------------------------------------------
-    bool detect()
-    {
-        return detectLoop(head);
-    }
 };
 signed main()
 {
@@ -83,7 +88,7 @@ signed main()
         obj.push(7);
         obj.push(6);
         obj.loopHere(0);
-        cout << obj.detect();
+        cout << obj.startPoint();
         cout << endl;
     }
     return 0;
