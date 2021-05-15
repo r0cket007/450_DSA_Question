@@ -1,3 +1,8 @@
+
+/*
+    Optimum location of point to minimize total distance
+    Link: https://www.geeksforgeeks.org/optimum-location-point-minimize-total-distance/
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define sq(x) ((x) * (x))
