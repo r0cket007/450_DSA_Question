@@ -1,6 +1,6 @@
 /*
-    Remove duplicate element from unsorted Linked List
-    Link: https://practice.geeksforgeeks.org/problems/remove-duplicates-from-an-unsorted-linked-list/1#
+    Move the last element to Front in a Linked List.    
+    Link: https://www.geeksforgeeks.org/move-last-element-to-front-of-a-given-linked-list/
 */
 #include <bits/stdc++.h>
 #define int long long
