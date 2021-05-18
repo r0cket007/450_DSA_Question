@@ -15,7 +15,7 @@ struct Node
         prev = NULL;
     }
 };
-void push(Node  **head, int data)
+void push(Node  **head, int data)   
 {
     if(*head == NULL)
     {
